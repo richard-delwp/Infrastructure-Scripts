@@ -8,8 +8,7 @@ while read env; do
 
         while read svr; do
                 echo "---------------------------------------------" 
-                az lock create --name Lock_$svr --lock-type CanNotDelete --subscription $subs --resource-group $rg --resource-name $svr --resource-type Micro
-soft.Compute/virtualMachines
+                az lock create --name Lock_$svr --lock-type CanNotDelete --subscription $subs --resource-group $rg --resource-name $svr --resource-type Microsoft.Compute/virtualMachines
         done < servers.txt
         rm servers.txt
 
